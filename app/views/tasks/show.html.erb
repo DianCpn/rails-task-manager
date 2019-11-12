@@ -1,0 +1,15 @@
+<h1><%= @task.title %></h1>
+<h2><%= @task.details %></h2>
+<ul>
+  <% if @task.completed? %>
+  <p>
+    <%= image_tag ("ic_check_box_outline_blank_24px"), width: 20 %>
+    This task is not completed yet
+  </p>
+  <% else %>
+  <p>
+    <%= image_tag ("ic_check_box_24px"), width: 20 %>
+    This task is completed!
+  </p>
+  <% end %>
+</ul>
