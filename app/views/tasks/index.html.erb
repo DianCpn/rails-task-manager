@@ -1,17 +1,18 @@
 <h1>My tasks</h1>
-<ul>
+<div>
   <% @tasks.each do |task| %>
     <% if task.completed? %>
-      <li>
+      <p>
       <%= image_tag ("ic_check_box_24px"), width: 20 %>
       <%= link_to task.title, task_path(task.id) %>
-      </li>
+      </p>
     <% else %>
-      <li>
+      <p>
       <%= image_tag ("ic_check_box_outline_blank_24px"), width: 20 %>
       <%= link_to task.title, task_path(task.id) %>
-      </li>
+      </p>
     <% end %>
   <% end %>
-</ul>
-
+</div>
+<%= image_tag ("ic_add_24px"), width: 20 %>
+<%= link_to "Add a new task", tasks_new_path %>

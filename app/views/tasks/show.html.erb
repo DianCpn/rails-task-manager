@@ -1,15 +1,30 @@
 <h1><%= @task.title %></h1>
 <h2><%= @task.details %></h2>
-<ul>
+<div>
   <% if @task.completed? %>
-  <p>
-    <%= image_tag ("ic_check_box_outline_blank_24px"), width: 20 %>
-    This task is not completed yet
-  </p>
-  <% else %>
   <p>
     <%= image_tag ("ic_check_box_24px"), width: 20 %>
     This task is completed!
   </p>
+  <% else %>
+  <p>
+    <%= image_tag ("ic_check_box_outline_blank_24px"), width: 20 %>
+    This task is not completed yet
+  </p>
   <% end %>
-</ul>
+</div>
+
+<div>
+  <%= image_tag ("trash-simple"), width: 20 %>
+  <%= link_to "Destroy this task", task_path(@task.id), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+<div>
+  <%= image_tag ("pencil"), width: 20 %>
+  <%= link_to "Edit this task", edit_task_path(@task)  %>
+</div>
+
+<div>
+  <%= image_tag ("ic_settings_backup_restore_24px"), width: 20 %>
+  <%= link_to "Back to list", tasks_path %>
+</div>
