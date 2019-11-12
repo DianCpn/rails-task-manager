@@ -1,15 +1,17 @@
 <h1>Update my task</h1>
-<div>
-  <%= form_for @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="form-row">
+  <div class="col-12">
+    <%= form_for @task do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  <%= f.label :details %>
-  <%= f.text_field :details %>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
 
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
 
-  <%= f.submit %>
-  <% end %>
+    <%= f.submit class:'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
