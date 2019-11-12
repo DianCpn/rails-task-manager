@@ -1,14 +1,2 @@
 <h1>Create a new task</h1>
-<div class="form-row">
-  <div class="col-12">
-    <%= form_for Task.new do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :details %>
-    <%= f.text_field :details %>
-
-    <%= f.submit class:'btn btn-primary' %>
-    <% end %>
-  </div>
-</div>
+<%= render 'form', task: @task %>
